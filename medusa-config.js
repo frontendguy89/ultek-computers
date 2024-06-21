@@ -61,23 +61,21 @@ const plugins = [
   {
     resolve: `medusa-plugin-meilisearch`,
     options: {
-      // config object passed when creating an instance
-      // of the MeiliSearch client
-      config: {
-        host: "https://ultek-computers-meilisearch.hy2uri.easypanel.host/",
-        apiKey: "Bl0wm3g0bsh1t3@2023",
-      },
-
+      // other options...
       settings: {
         products: {
           indexSettings: {
-            searchableAttributes: ["title", "description", "variant_sku"],
-            displayedAttributes: [
-              "id",
-              "title",
+            searchableAttributes: [
+              "title", 
               "description",
               "variant_sku",
-              "thumbnail",
+            ],
+            displayedAttributes: [
+              "id", 
+              "title", 
+              "description", 
+              "variant_sku", 
+              "thumbnail", 
               "handle",
             ],
           },
