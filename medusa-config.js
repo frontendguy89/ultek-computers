@@ -58,6 +58,46 @@ const plugins = [
       enableUI: true,
     },
   },
+  {
+    resolve: `medusa-plugin-meilisearch`,
+    options: {
+      // other options...
+      settings: {
+        products: {
+          indexSettings: {
+            searchableAttributes: [
+              "title", 
+              "description",
+              "variant_sku",
+            ],
+            displayedAttributes: [
+              "id", 
+              "title", 
+              "description", 
+              "variant_sku", 
+              "thumbnail", 
+              "handle",
+            ],
+          },
+          primaryKey: "id",
+        },
+      },
+    },
+  },
+  {
+    resolve: `@medusajs/file-local`,
+    options: {
+      // optional
+    },
+  },
+  {
+    resolve: `medusa-payment-paystack`,
+    /** @type {import("medusa-payment-paystack").PluginOptions} */
+    options: {
+      secret_key: "sk_live_42a5b0ba08020573b962f447de96265c6924a3bb",
+    },
+  },
+
 ];
 
 const modules = {
