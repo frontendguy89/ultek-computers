@@ -61,21 +61,23 @@ const plugins = [
   {
     resolve: `medusa-plugin-meilisearch`,
     options: {
-      // other options...
+      // config object passed when creating an instance
+      // of the MeiliSearch client
+      config: {
+        host: https://ultek-computers-meilisearch.hy2uri.easypanel.host/,
+        apiKey: Bl0wm3g0bsh1t3@2023,
+      },
+
       settings: {
         products: {
           indexSettings: {
-            searchableAttributes: [
-              "title", 
+            searchableAttributes: ["title", "description", "variant_sku"],
+            displayedAttributes: [
+              "id",
+              "title",
               "description",
               "variant_sku",
-            ],
-            displayedAttributes: [
-              "id", 
-              "title", 
-              "description", 
-              "variant_sku", 
-              "thumbnail", 
+              "thumbnail",
               "handle",
             ],
           },
@@ -97,21 +99,20 @@ const plugins = [
       secret_key: "sk_live_42a5b0ba08020573b962f447de96265c6924a3bb",
     },
   },
-
 ];
 
 const modules = {
   eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
-      redisUrl: REDIS_URL
-    }
+      redisUrl: REDIS_URL,
+    },
   },
   cacheService: {
     resolve: "@medusajs/cache-redis",
     options: {
-      redisUrl: REDIS_URL
-    }
+      redisUrl: REDIS_URL,
+    },
   },
 };
 
@@ -125,7 +126,7 @@ const projectConfig = {
   worker_mode: process.env.MEDUSA_WORKER_MODE,
   // Uncomment the following lines to enable REDIS
   redis_url: REDIS_URL,
-}
+};
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
 module.exports = {
