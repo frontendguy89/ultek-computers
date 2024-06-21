@@ -68,7 +68,7 @@ const plugins = [
     resolve: `medusa-payment-paystack`,
     /** @type {import("medusa-payment-paystack").PluginOptions} */
     options: {
-      secret_key: "sk_live_42a5b0ba08020573b962f447de96265c6924a3bb",
+      secret_key: process.env.PAYSTACK_SECRET_KEY
     },
   },
 ];
