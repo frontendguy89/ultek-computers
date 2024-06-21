@@ -64,8 +64,8 @@ const plugins = [
       // config object passed when creating an instance
       // of the MeiliSearch client
       config: {
-        host: https://ultek-computers-meilisearch.hy2uri.easypanel.host/,
-        apiKey: Bl0wm3g0bsh1t3@2023,
+        host: "https://ultek-computers-meilisearch.hy2uri.easypanel.host/",
+        apiKey: "Bl0wm3g0bsh1t3@2023",
       },
 
       settings: {
