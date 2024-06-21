@@ -59,32 +59,6 @@ const plugins = [
     },
   },
   {
-    resolve: `medusa-plugin-meilisearch`,
-    options: {
-      // other options...
-      settings: {
-        products: {
-          indexSettings: {
-            searchableAttributes: [
-              "title", 
-              "description",
-              "variant_sku",
-            ],
-            displayedAttributes: [
-              "id", 
-              "title", 
-              "description", 
-              "variant_sku", 
-              "thumbnail", 
-              "handle",
-            ],
-          },
-          primaryKey: "id",
-        },
-      },
-    },
-  },
-  {
     resolve: `@medusajs/file-local`,
     options: {
       // optional
